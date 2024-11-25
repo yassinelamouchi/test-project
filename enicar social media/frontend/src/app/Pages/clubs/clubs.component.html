@@ -1,0 +1,86 @@
+<div>
+    <app-sidebar></app-sidebar>
+
+    <div class="lg:pl-72">
+
+        <!-- Global notification live region, render this permanently at the end of the document -->
+
+
+        <main class="py-10 bg-gray-100">
+
+            <div class="max-w-lg mx-auto my-8">
+                <h1 class="text-3xl text-center font-semibold text-gray-800  lg:text-4xl">
+                    Meet our clubs
+                </h1>
+
+                <p class="mt-6 text-center text-gray-500 ">
+                    Enicarthage clubs are a great way to meet new people, learn new things, and have fun. We have a
+                </p>
+
+
+            </div>
+
+
+
+
+
+            <div class="max-w-6xl mx-auto ">
+
+                <div
+                    class="divide-y  divide-gray-200 rounded-lg  shadow sm:grid sm:grid-cols-2 sm:gap-px sm:divide-y-0">
+                    <div *ngFor="let club of clubs"
+                        class="rounded-tl-lg rounded-tr-lg sm:rounded-tr-none group relative bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500 mx-2 my-8">
+                        <div>
+                            <img class="h-20 w-20 -mt-16 rounded-full" src="{{club.logo}}" alt="">
+                        </div>
+                        <div class="mt-8">
+                            <h3 class="text-base font-semibold leading-6 text-gray-900">
+                                <a href="#" class="focus:outline-none flex items-center">
+                                    <!-- Extend touch target to entire panel -->
+                                    <span class="absolute inset-0" aria-hidden="true"></span>
+                                    {{club.name}} <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill mx-2 gradient" viewBox="0 0 16 16">
+                                        <defs>
+                                          <linearGradient id="checkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#F0C05A" />
+                                            <stop offset="100%" stop-color="#F59E0B" />
+                                          </linearGradient>
+                                        </defs>
+                                        <path fill="url(#checkGradient)" fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                                      </svg>
+                                      
+                                </a>
+                            </h3>
+                            <p class="mt-2 text-sm text-gray-500">{{club.description}}</p>
+                            <p class="text-primary">
+                                <span class="text-sm ">Creation year:</span>
+                                {{club.creationYear}}
+                            </p>
+                        </div>
+                        <!-- More -->
+                        <a [routerLink]="['/club', club.id] ">
+
+                            <div class="mt-6">
+                                <p
+                                    class="text-sm border-2 w-fit hover:bg-primary hover:text-white duration-300 p-2 rounded-lg border-primary font-medium text-primary">
+                                    <span class="group focus:outline-none">
+                                        <span class="absolute inset-0" aria-hidden="true"></span>
+                                        View details
+                                    </span>
+                                </p>
+                            </div>
+                        </a>
+
+
+
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+
+        </main>
+    </div>
+</div>
